@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -94,7 +95,8 @@ public class CommDetailActivity extends AppCompatActivity implements XListView.I
         initView();
         communityItem = (CommunityItem) getIntent().getSerializableExtra("COMM");
         //根据当前用户身份，判断显示FloatingActionButton显示哪些
-        isLeader = communityItem.getCommLeader().getObjectId().equals(BmobUser.getCurrentUser(Student.class).getObjectId());
+
+        isLeader = TextUtils.isEmpty(communityItem.getCommLeader().getObjectId())?false:communityItem.getCommLeader().getObjectId().equals(BmobUser.getCurrentUser(Student.class).getObjectId());
         Log.i("htht", "是不是队长哦: " + isLeader);
         if (isLeader) {
             menu_apply_be_member.setVisibility(View.VISIBLE);
@@ -243,7 +245,7 @@ public class CommDetailActivity extends AppCompatActivity implements XListView.I
                     public void done(BmobException e) {
                         if (e == null) {
                             Log.i("htht", "申请加入本社图成功");
-                            Toast.makeText(CommDetailActivity.this,"申请成功，请等待社团管理员回应",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CommDetailActivity.this,"申请成功，请等待活动管理员回应",Toast.LENGTH_SHORT).show();
                         } else {
                             Log.i("htht", "申请加入本社图失败：" + e.getMessage());
                         }

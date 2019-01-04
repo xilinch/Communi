@@ -2,7 +2,7 @@
 <tabs>
     <tab
         id="@+id/tab_community"
-        title="社团"
+        title="活动报团"
         icon="@drawable/ic_community"
         barColorWhenSelected="#FE3D81" />
     <tab

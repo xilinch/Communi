@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
-                android:hint="学校" />
+                android:hint="地区" />
         </android.support.design.widget.TextInputLayout>
 
 
@@ -101,6 +101,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

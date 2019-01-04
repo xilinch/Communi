@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //初始化控件
         initView();
-        //第一：默认初始化
-        Bmob.initialize(this, "214523c8d5aeba03fe3da3bac366f14a");
+        //第一：默认初始化214523c8d5aeba03fe3da3bac366f14a
+        Bmob.initialize(this, "c2ab693116d0e1a0e224b22a87fb0d5b");
 
         //自动登陆
         Student student = BmobUser.getCurrentUser(Student.class);

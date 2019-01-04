@@ -16,7 +16,7 @@ public class CommEventPagerAdapter extends FragmentPagerAdapter {
 
     public CommEventPagerAdapter(FragmentManager manager) {
         super(manager);
-        tab_title = new String[]{"全校社团","近期活动"};
+        tab_title = new String[]{"地区活动","近期活动"};
     }
 
     @Override

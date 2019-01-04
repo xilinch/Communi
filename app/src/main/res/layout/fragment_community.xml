@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_comm"
             app:fab_size="mini"
-            app:fab_label="创建一个新社团" />
+            app:fab_label="创建一个新活动" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_my_comm"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_my_comm"
             app:fab_size="mini"
-            app:fab_label="我的社团" />
+            app:fab_label="我发起的活动" />
 
     </com.github.clans.fab.FloatingActionMenu>
 

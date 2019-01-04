@@ -284,7 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_comm"
-            app:fab_label="申请加入本社团"
+            app:fab_label="申请加入活动"
             app:fab_size="mini" />
 
         <!--所有人：查看本社团活动-->
@@ -293,7 +293,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_my_comm"
-            app:fab_label="查看本社团活动"
+            app:fab_label="查看活动"
             app:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

@@ -93,28 +93,28 @@ public class PersonalFragment extends Fragment {
         cImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ActionSheetDialog(context)
-                        .builder()
-                        .setCancelable(false)
-                        .setCanceledOnTouchOutside(false)
-                        .addSheetItem("打开相册", ActionSheetDialog.SheetItemColor.Blue,
-                                new ActionSheetDialog.OnSheetItemClickListener() {
-
-                                    @Override
-                                    public void onClick(int which) {
-
-                                        gallery();
-                                    }
-                                })
-                        .addSheetItem("拍照", ActionSheetDialog.SheetItemColor.Blue,
-                                new ActionSheetDialog.OnSheetItemClickListener() {
-
-                                    @Override
-                                    public void onClick(int which) {
-
-                                        camera();
-                                    }
-                                }).show();
+//                new ActionSheetDialog(context)
+//                        .builder()
+//                        .setCancelable(false)
+//                        .setCanceledOnTouchOutside(false)
+//                        .addSheetItem("打开相册", ActionSheetDialog.SheetItemColor.Blue,
+//                                new ActionSheetDialog.OnSheetItemClickListener() {
+//
+//                                    @Override
+//                                    public void onClick(int which) {
+//
+//                                        gallery();
+//                                    }
+//                                })
+//                        .addSheetItem("拍照", ActionSheetDialog.SheetItemColor.Blue,
+//                                new ActionSheetDialog.OnSheetItemClickListener() {
+//
+//                                    @Override
+//                                    public void onClick(int which) {
+//
+//                                        camera();
+//                                    }
+//                                }).show();
             }
         });
 

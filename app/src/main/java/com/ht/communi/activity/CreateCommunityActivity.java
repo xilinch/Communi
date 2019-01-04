@@ -105,7 +105,7 @@ public class CreateCommunityActivity extends AppCompatActivity {
 
         //判断是创建社团还是修改社团
         if(communityItem == null) {
-            btn_create_comm.setText("创建社团");
+            btn_create_comm.setText("创建活动");
             btn_create_comm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -123,7 +123,7 @@ public class CreateCommunityActivity extends AppCompatActivity {
             ed_comm_name.setText(communityItem.getCommName());
             ed_comm_school.setText(communityItem.getCommSchool());
             ed_comm_description.setText(communityItem.getCommDescription());
-            btn_create_comm.setText("修改社团");
+            btn_create_comm.setText("修改活动");
             btn_create_comm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -134,28 +134,28 @@ public class CreateCommunityActivity extends AppCompatActivity {
         iv_comm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ActionSheetDialog(context)
-                        .builder()
-                        .setCancelable(false)
-                        .setCanceledOnTouchOutside(false)
-                        .addSheetItem("打开相册", ActionSheetDialog.SheetItemColor.Blue,
-                                new ActionSheetDialog.OnSheetItemClickListener() {
-
-                                    @Override
-                                    public void onClick(int which) {
-
-                                        gallery();
-                                    }
-                                })
-                        .addSheetItem("拍照", ActionSheetDialog.SheetItemColor.Blue,
-                                new ActionSheetDialog.OnSheetItemClickListener() {
-
-                                    @Override
-                                    public void onClick(int which) {
-
-                                        camera();
-                                    }
-                                }).show();
+//                new ActionSheetDialog(context)
+//                        .builder()
+//                        .setCancelable(false)
+//                        .setCanceledOnTouchOutside(false)
+//                        .addSheetItem("打开相册", ActionSheetDialog.SheetItemColor.Blue,
+//                                new ActionSheetDialog.OnSheetItemClickListener() {
+//
+//                                    @Override
+//                                    public void onClick(int which) {
+//
+//                                        gallery();
+//                                    }
+//                                })
+//                        .addSheetItem("拍照", ActionSheetDialog.SheetItemColor.Blue,
+//                                new ActionSheetDialog.OnSheetItemClickListener() {
+//
+//                                    @Override
+//                                    public void onClick(int which) {
+//
+//                                        camera();
+//                                    }
+//                                }).show();
             }
         });
     }
@@ -309,7 +309,7 @@ public class CreateCommunityActivity extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(context,
                 R.style.Theme_AppCompat_DayNight_Dialog);
         progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("创建社团中...");
+        progressDialog.setMessage("创建中...");
         progressDialog.show();
 
         String name = ed_comm_name.getText().toString();
@@ -439,21 +439,21 @@ public class CreateCommunityActivity extends AppCompatActivity {
         String description = ed_comm_description.getText().toString();
 
         if (name.isEmpty()|| name.length() > 20) {
-            ed_comm_name.setError("请输入小于20位社团名");
+            ed_comm_name.setError("请输入小于20位活动名称名");
             valid = false;
         } else {
             ed_comm_name.setError(null);
         }
 
         if (school.isEmpty()) {
-            ed_comm_school.setError("请输入一个学校名");
+            ed_comm_school.setError("请输入一个地区名");
             valid = false;
         } else {
             ed_comm_school.setError(null);
         }
 
         if (description.isEmpty()) {
-            ed_comm_description.setError("请输入您对您社团的详细描述");
+            ed_comm_description.setError("请输入您对您活动的详细描述");
             valid = false;
         } else {
             ed_comm_description.setError(null);

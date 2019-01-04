@@ -127,7 +127,7 @@ public class ChangeMessageActivity extends AppCompatActivity {
                 tv_change_title.setText("更改手机号");
                 tv_old_message.setText("我现在的手机号是");
                 tv_new_message.setText("修改后的手机号是");
-                ll_verify.setVisibility(View.VISIBLE);
+                ll_verify.setVisibility(View.GONE);
                 break;
             case CHANGE_TYPE_EMAIL:
                 //更改邮箱
@@ -159,7 +159,7 @@ public class ChangeMessageActivity extends AppCompatActivity {
                         break;
                     case CHANGE_TYPE_SCHOOL:
                         if (strNewMessage.isEmpty()) {
-                            ed_new_message.setError("学校名不能为空！！！");
+                            ed_new_message.setError("地区不能为空！！！");
                             return;
                         }
                         newStudent.setSchool(strNewMessage);
@@ -172,10 +172,10 @@ public class ChangeMessageActivity extends AppCompatActivity {
                             return;
                         }
                         //验证码不能为空
-                        if (ll_verify.getVisibility() != View.GONE  &&  ed_verify.getText().toString().isEmpty()) {
-                            ed_verify.setError("请输入验证码");
-                            return;
-                        }
+//                        if (ll_verify.getVisibility() != View.GONE  &&  ed_verify.getText().toString().isEmpty()) {
+//                            ed_verify.setError("请输入验证码");
+//                            return;
+//                        }
                         newStudent.setMobilePhoneNumber(strNewMessage);
                         newStudent.setUsername(strNewMessage);
                         intentResult = RESULT_MOBILE;
@@ -196,28 +196,29 @@ public class ChangeMessageActivity extends AppCompatActivity {
                     stuUpdate();
                 } else {
                     //验证码验证
-                    BmobSMS.verifySmsCode(ed_new_message.getText().toString(), ed_verify.getText().toString(), new UpdateListener() {
-                        @Override
-                        public void done(BmobException e) {
-                            if (e == null) {
-                                //短信验证码已验证成功
-                                stuUpdate();
-                            } else {
-                                Log.i("htht", "验证失败：code =" + e.getErrorCode() + ",msg = " + e.getLocalizedMessage() + "线程名      " + Thread.currentThread().getName());
-                                String errorMessage;
-                                switch (e.getErrorCode()) {
-                                    case 207:
-                                        errorMessage = "验证码错误，请重新输入 :)";
-                                        break;
-                                    default:
-                                        errorMessage = "出错了！！！";
-                                        break;
-
-                                }
-                                Toast.makeText(getBaseContext(), errorMessage, Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                    stuUpdate();
+//                    BmobSMS.verifySmsCode(ed_new_message.getText().toString(), ed_verify.getText().toString(), new UpdateListener() {
+//                        @Override
+//                        public void done(BmobException e) {
+//                            if (e == null) {
+//                                //短信验证码已验证成功
+//                                stuUpdate();
+//                            } else {
+//                                Log.i("htht", "验证失败：code =" + e.getErrorCode() + ",msg = " + e.getLocalizedMessage() + "线程名      " + Thread.currentThread().getName());
+//                                String errorMessage;
+//                                switch (e.getErrorCode()) {
+//                                    case 207:
+//                                        errorMessage = "验证码错误，请重新输入 :)";
+//                                        break;
+//                                    default:
+//                                        errorMessage = "出错了！！！";
+//                                        break;
+//
+//                                }
+//                                Toast.makeText(getBaseContext(), errorMessage, Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    });
                 }
 
             }

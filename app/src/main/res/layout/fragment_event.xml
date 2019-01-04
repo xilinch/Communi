@@ -17,6 +17,8 @@
     </android.support.v4.widget.SwipeRefreshLayout>
     <TextView
         android:id="@+id/tv_des"
+        android:text="暂无活动"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
